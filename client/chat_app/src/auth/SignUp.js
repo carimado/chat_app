@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
-// import { createUserWithEmailAndPassword } from 'firebase/auth';
-// import { auth } from './firebase-config';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase-config';
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  // const signUpSubmit = (e) => {
-  //   e.preventDefault();
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //   .then((auth) => {
-  //     console.log(auth)
-  //   })
-  //   .catch((error) => {
-  //     console.log(error)
-  //   })
-  // }
+  const signUpSubmit = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((auth) => {
+      console.log(auth)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={signUpSubmit}>
         <h1>Create an account</h1>
         <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
