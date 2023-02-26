@@ -30,7 +30,7 @@ Tech:
 - Design Inspiration and Mockups
 
 [] Stage 1 - Backend Connection
--
+- NodeJS + Socket.IO connection
 
 [] Stage 2 - Developing Functionality
 - Chat Window Component
